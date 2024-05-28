@@ -64,7 +64,7 @@ namespace Classes
             StringBuilder sb = new StringBuilder();
             sb.Append("---------------------------");
             sb.Append($"\nNome: {this.Nome}\n");
-            sb.Append($"\nPreço: R$ {this.Preco}\n");
+            sb.Append($"\nPreço: R$ {this.Preco:F2}\n");
             sb.Append($"\nEstoque: {this.Estoque}\n");
             sb.Append($"\nVendidos: {this.Quant_Vendida}");
             return sb.ToString();
