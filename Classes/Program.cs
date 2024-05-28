@@ -15,8 +15,7 @@ namespace Classes
             {
                 Console.Clear();
                 Console.WriteLine("--------- Gestão de Estoque ---------");
-                Console.WriteLine("");
-                Console.WriteLine("Menu principal: \n1) Comprar produto \n2) Vender produto \n3) Acessar estoque \n4) Sair");
+                Console.WriteLine("\nMenu principal: \n1) Comprar produto \n2) Vender produto \n3) Acessar estoque \n4) Sair");
                 Console.Write("Selecione uma das opções acima:");
                 op = int.Parse(Console.ReadLine()!);
 
@@ -64,8 +63,7 @@ namespace Classes
 
                 Console.Clear();
                 Console.WriteLine("Produto adicionado com sucesso ao estoque.");
-                Console.WriteLine("");
-                Console.WriteLine("Pressione qualquer tecla para voltar ao menu inicial.");
+                Console.WriteLine("\nPressione qualquer tecla para voltar ao menu inicial.");
                 Console.ReadKey();
             }
 
@@ -75,19 +73,16 @@ namespace Classes
                 if (produtos.Count > 0)
                 {
                     Console.WriteLine(">>>>>> Produtos disponíveis para vender <<<<<<");
-                    Console.WriteLine("");
                     foreach (var p in produtos)
                     {
                         Console.WriteLine(p.ObterTexto());
                     }
-                    Console.WriteLine("");
-                    Console.WriteLine("Selecione um produto que deseja vender:");
+                    Console.WriteLine("\nSelecione um produto que deseja vender:");
                     string p_vendido = Console.ReadLine()!;
 
                     if (produtos.Exists(nome => nome.Nome == p_vendido))
                     {
-                        Console.WriteLine("");
-                        Console.WriteLine("Digite a quantidade desse produto que deseja vender:");
+                        Console.WriteLine("\nDigite a quantidade desse produto que deseja vender:");
                         int quant_vendida = int.Parse(Console.ReadLine()!);
 
                         if (novoproduto != null && novoproduto.Estoque >= quant_vendida)
@@ -97,33 +92,31 @@ namespace Classes
 
                             Console.Clear();
                             Console.WriteLine($"Venda realizada com sucesso. \n\n{quant_vendida} unidades de {novoproduto.Nome} vendidas.");
-                            Console.WriteLine("");
-                            Console.WriteLine("Pressione qualquer tecla para voltar ao menu inicial.");
+                            Console.WriteLine("\nPressione qualquer tecla para voltar ao menu inicial.");
                             Console.ReadKey();
                         }
                         else
                         {
-                            Console.WriteLine("");
+                            Console.Clear();
                             Console.WriteLine("Quantidade insuficiente para a venda.");
-                            Console.WriteLine("");
-                            Console.WriteLine("Pressione qualquer tecla para voltar ao menu inicial.");
+                            Console.WriteLine("\nPressione qualquer tecla para voltar ao menu inicial.");
                             Console.ReadKey();
                         }
                     }
 
                     else
                     {
-                        Console.WriteLine("");
+                        Console.Clear();
                         Console.WriteLine("Nenhum produto cadastrado no estoque possui este nome.");
-                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu inicial.");
+                        Console.WriteLine("\nPressione qualquer tecla para voltar ao menu inicial.");
                         Console.ReadKey();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("");
+                    Console.Clear();
                     Console.WriteLine("Não é possível vender um produto pois não há nenhum cadastrado no estoque.");
-                    Console.WriteLine("Pressione qualquer tecla para voltar ao menu inicial.");
+                    Console.WriteLine("\nPressione qualquer tecla para voltar ao menu inicial.");
                     Console.ReadKey();
                 }
             }
@@ -138,15 +131,14 @@ namespace Classes
                     {
                         Console.WriteLine(p.ObterTexto());
                     }
-                    Console.WriteLine("");
-                    Console.WriteLine("Pressione qualquer tecla para voltar ao menu inicial.");
+                    Console.WriteLine("\nPressione qualquer tecla para voltar ao menu inicial.");
                     Console.ReadKey();
                 }
                 else
                 {
-                    Console.WriteLine("");
+                    Console.Clear();
                     Console.WriteLine("Ainda não nenhum produto cadastrado no sistema.");
-                    Console.WriteLine("Pressione qualquer tecla para voltar ao menu inicial.");
+                    Console.WriteLine("\nPressione qualquer tecla para voltar ao menu inicial.");
                     Console.ReadKey();
                 }
             }
