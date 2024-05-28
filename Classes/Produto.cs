@@ -62,7 +62,7 @@ namespace Classes
         public string ObterTexto()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("---------------------------");
+            sb.Append("\n---------------------------");
             sb.Append($"\nNome: {this.Nome}\n");
             sb.Append($"\nPreço: R$ {this.Preco:F2}\n");
             sb.Append($"\nEstoque: {this.Estoque}\n");
